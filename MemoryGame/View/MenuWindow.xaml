@@ -1,0 +1,47 @@
+﻿<Window x:Class="MemoryGame.View.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MemoryGame.ViewModel"
+        mc:Ignorable="d"
+        Title="Menu" Height="100" Width="250">
+
+    <Window.DataContext>
+        <local:MenuVM/>
+    </Window.DataContext>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Category">
+                    <MenuItem Header="Cars" Command="{Binding Path = MenuCommands.UpdateCategoryCommand}" CommandParameter="Cars"/>
+                    <MenuItem Header="Animals" Command="{Binding Path = MenuCommands.UpdateCategoryCommand}" CommandParameter="Animals"/>
+                    <MenuItem Header="Vegetables" Command="{Binding Path= MenuCommands.UpdateCategoryCommand}" CommandParameter="Vegetables"/>
+                </MenuItem>
+                    <MenuItem Header="New Game" Command="{Binding MenuCommands.NewGameCommand}" />
+                <MenuItem Header="Open Game" Command="{Binding MenuCommands.OpenGameCommand}" />
+                <MenuItem Header="Save Game" Command="{Binding SaveGameCommand}" />
+                <MenuItem Header="Statistics" Command="{Binding MenuCommands.StatsCommand}" />
+                <Separator />
+                <MenuItem Header="Exit" Command="{Binding MenuCommands.ExitCommand}" />
+            </MenuItem>
+            <MenuItem Header="Options">
+                <MenuItem Header="Standard" Command="{Binding MenuCommands.SetStandardBoardCommand}"/>
+                <MenuItem Header="Custom" >
+                    <MenuItem Header="2X4" Command="{Binding MenuCommands.SetBoardSizeCommand}" CommandParameter="0"/>
+                    <MenuItem Header="4X2" Command="{Binding MenuCommands.SetBoardSizeCommand}" CommandParameter="1"/>
+                    <MenuItem Header="3X6" Command="{Binding MenuCommands.SetBoardSizeCommand}" CommandParameter="2"/>
+                    <MenuItem Header="6X3" Command="{Binding MenuCommands.SetBoardSizeCommand}" CommandParameter="3"/>
+                    <MenuItem Header="5X2" Command="{Binding MenuCommands.SetBoardSizeCommand}" CommandParameter="4"/>
+                    <MenuItem Header="2X6" Command="{Binding MenuCommands.SetBoardSizeCommand}" CommandParameter="5"/>
+                    <MenuItem Header="6X6" Command="{Binding MenuCommands.SetBoardSizeCommand}" CommandParameter="6"/>
+                    <MenuItem Header="4X5" Command="{Binding MenuCommands.SetBoardSizeCommand}" CommandParameter="7"/>
+                    <MenuItem Header="5X4" Command="{Binding MenuCommands.SetBoardSizeCommand}" CommandParameter="8"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Command="{Binding  Path =MenuCommands.AboutCommand}" />
+            </MenuItem>
+        </Menu>
+    </DockPanel>
+</Window>
