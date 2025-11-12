@@ -31,8 +31,3 @@ Utilizatorii își aleg un profil local, configurează tabla de joc după prefer
 - **`Data/Stats5.txt`** — păstrează statisticile globale în format `nume-jocuri-jucate-jocuri-câștigate`.  
 - **Fișiere `<nume>.json`** — salvează automat starea curentă a jocului pentru fiecare jucător, permițând reluarea rapidă.
 
----
-
-🧩 *Dezvoltat de Razvan Iftime*  
-WPF | .NET 9 | MVVM | C#
-
